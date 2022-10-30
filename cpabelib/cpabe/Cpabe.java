@@ -1,5 +1,5 @@
 package cpabelib.cpabe;
-// import cpabelib.cpabe.policy.LangPolicy;
+import cpabelib.cpabe.policy.LangPolicy;
 import it.unisa.dia.gas.jpbc.Element;
 
 import java.io.IOException;

@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.lang.Integer;
 
 public class Bswabe {
 
@@ -30,9 +31,8 @@ public class Bswabe {
 
 	public static void setup(BswabePub pub, BswabeMsk msk) {
 		Element alpha, beta_inv;
-
-		CurveParameters params = new DefaultCurveParameters()
-				.load(new ByteArrayInputStream(curveParams.getBytes()));
+		
+		CurveParameters params = new DefaultCurveParameters().load(new ByteArrayInputStream(curveParams.getBytes()));
 
 		pub.pairingDesc = curveParams;
 		pub.p = PairingFactory.getPairing(params);
@@ -386,7 +386,7 @@ public class Bswabe {
 					pickSatisfyMinLeaves(p.children[i], prv);
 
 			for (i = 0; i < len; i++)
-				c.add(new Integer(i));
+				c.add(Integer.valueOf(i));
 
 			Collections.sort(c, new IntegerComparator(p));
 
@@ -400,7 +400,7 @@ public class Bswabe {
 					l++;
 					p.min_leaves += p.children[c_i].min_leaves;
 					k = c_i + 1;
-					p.satl.add(new Integer(k));
+					p.satl.add( Integer.valueOf(k));
 				}
 			}
 		}
